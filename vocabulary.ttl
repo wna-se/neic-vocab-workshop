@@ -24,10 +24,10 @@
     <https://orcid.org/0000-0002-3890-6620>;
   dct:description "Terms used to describe different aspects of NeIC activities"@en;
   dct:rights <https://spdx.org/licenses/CC-BY-4.0>;
-  dct:title "NeIC Organisation Vocabulary"@en;
+  dct:title "Unofficial NeIC Organisation Vocabulary"@en;
   pav:createdOn "2023-01-24T17:15+01:00"@en;
   pav:lastUpdatedOn "2023-01-24T18:23+01:00"@en;
-  pav:version "0.2.0"@en;
+  pav:version "0.2.2"@en;
   skos:hasTopConcept <https://neic.no/neic-ahm2023-onto#>, neic-onto:activity, neic-onto:affiliateproject,
     neic-onto:event, neic-onto:news, neic-onto:service;
   skos:prefLabel "neic-onto"@en .
