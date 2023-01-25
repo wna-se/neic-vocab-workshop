@@ -1,4 +1,4 @@
-[![CI](https://github.com/m4m-dk/wna-se/neic-vocab-workshop/Sheet2RDF/badge.svg)](https://github.com/wna-se/neic-vocab-workshop/actions?query=workflow%3ASheet2RDF)
+[![CI](https://github.com/wna-se/neic-vocab-workshop/workflows/Sheet2RDF/badge.svg)](https://github.com/wna-se/neic-vocab-workshop/actions?query=workflow%3ASheet2RDF)
 
 # neic-vocab-workshop
 
