@@ -1,0 +1,186 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix euvoc: <http://publications.europa.eu/ontology/euvoc#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix neic-onto: <https://neic.no/neic-ahm2023-onto#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pav: <http://purl.org/pav/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosthes: <http://purl.org/iso25964/skos-thes#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+@prefix wikidata: <https://www.wikidata.org/wiki/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://neic.no/neic-ahm2023-onto/> a skos:ConceptScheme;
+  dct:creator "Alberto"@en, "Hiroki"@en, "Pauliina"@en, <https://orcid.org/0000-0002-1784-29200>,
+    <https://orcid.org/0000-0002-3890-6620>;
+  dct:description "Terms used to describe different aspects of NeIC activities"@en;
+  dct:rights <https://spdx.org/licenses/CC-BY-4.0>;
+  dct:title "NeIC Organisation Vocabulary"@en;
+  pav:createdOn "2023-01-24T17:15+01:00"@en;
+  pav:lastUpdatedOn "2023-01-24T18:23+01:00"@en;
+  pav:version "0.2.0"@en;
+  skos:hasTopConcept <https://neic.no/neic-ahm2023-onto#>, neic-onto:activity, neic-onto:affiliateproject,
+    neic-onto:event, neic-onto:news, neic-onto:service;
+  skos:prefLabel "neic-onto"@en .
+
+neic-onto:project a skos:Concept;
+  skos:altLabel "projects"@en;
+  skos:broader neic-onto:activity;
+  skos:definition "Collaborative enterprise, frequently involving research or design, that is carefully planned to achieve a particular aim"@en;
+  skos:exactMatch wikidata:Q170584;
+  skos:inScheme <https://neic.no/neic-ahm2023-onto/>;
+  skos:narrower neic-onto:CodeRefinery, neic-onto:HeilsaTryggvedottir, neic-onto:NICEST2,
+    neic-onto:NordIQuEst, neic-onto:NordicMicrodataDatabase, neic-onto:Puhuri;
+  skos:prefLabel "project"@en .
+
+neic-onto:activity a skos:Concept;
+  dct:source <https://neic.no/activities/>;
+  skos:altLabel "activities"@en;
+  skos:definition "Most of our activities are within collaborative projects with Nordic and Estonian partners. We also aim to build professional networks and nurture connections between experts who work on similar challenges but come from different Nordic organisations. We do this by, for example, running workshops and building virtual social spaces for distributed teamwork."@en;
+  skos:inScheme <https://neic.no/neic-ahm2023-onto/>;
+  skos:narrower neic-onto:NeICForum, neic-onto:operations, neic-onto:project;
+  skos:prefLabel "activity"@en;
+  skos:topConceptOf <https://neic.no/neic-ahm2023-onto/> .
+
+neic-onto:affiliateproject a skos:Concept;
+  dct:source <https://neic.no/affiliates/>;
+  skos:altLabel "affiliate"@en, "affiliates"@en;
+  skos:definition "The NeIC Affiliate Programme enhances the benefits and impacts of NeIC projects after they have been completed. All concluded NeIC projects and activities are eligible to participate, advertise their highlights on the Affiliate website and apply annually for NeIC financial support."@en;
+  skos:inScheme <https://neic.no/neic-ahm2023-onto/>;
+  skos:prefLabel "affiliate project"@en;
+  skos:topConceptOf <https://neic.no/neic-ahm2023-onto/> .
+
+neic-onto:operations a skos:Concept;
+  skos:broader neic-onto:activity;
+  skos:inScheme <https://neic.no/neic-ahm2023-onto/>;
+  skos:narrower neic-onto:NordicWLCGtier-1facility;
+  skos:prefLabel "operations"@en .
+
+neic-onto:NeICForum a skos:Concept;
+  skos:altLabel "forum"@en;
+  skos:broader neic-onto:activity;
+  skos:definition "Activities that bring together networks of experts, service providers, users and other stakeholders on different topics"@en;
+  skos:inScheme <https://neic.no/neic-ahm2023-onto/>;
+  skos:narrower neic-onto:FAIRDataForum;
+  skos:prefLabel "NeIC Forum"@en .
+
+neic-onto:news a skos:Concept;
+  dct:source <https://neic.no/news/>;
+  skos:inScheme <https://neic.no/neic-ahm2023-onto/>;
+  skos:prefLabel "news"@en;
+  skos:topConceptOf <https://neic.no/neic-ahm2023-onto/> .
+
+neic-onto:event a skos:Concept;
+  dct:source <https://indico.neic.no/>;
+  skos:altLabel "events"@en;
+  skos:inScheme <https://neic.no/neic-ahm2023-onto/>;
+  skos:narrower neic-onto:NeICAll-handsMeeting;
+  skos:prefLabel "event"@en;
+  skos:topConceptOf <https://neic.no/neic-ahm2023-onto/> .
+
+neic-onto:NeICAll-handsMeeting a skos:Concept;
+  dct:source <https://indico.neic.no/category/8/>;
+  skos:altLabel "AHM"@en, "NeIC All Hands Meetings"@en, "NeIC All-hands Meeting"@en,
+    "NeIC All-hands Meetings"@en;
+  skos:broader neic-onto:event;
+  skos:definition "The NeIC All-hands meeting (AHM) is an annual event at NeIC where people working in NeIC's activities come together across projects and teams. The aim of these events is to give the personnel a chance to get to know other people working on e-infrastructure in the Nordics so that we can connect and learn from each other. The AHMs are traditionally held in a wintery location in Norway where it is possible not only to learn new and hear interesting presentations, but to enjoy several outdoor and indoor activities together with colleagues."@en;
+  skos:inScheme <https://neic.no/neic-ahm2023-onto/>;
+  skos:narrower neic-onto:NeICAll-handsMeeting2023;
+  skos:prefLabel "NeIC All-hands Meeting"@en .
+
+neic-onto:NeICAll-handsMeeting2023 a skos:Concept;
+  dct:source <https://indico.neic.no/event/237/>;
+  skos:broader neic-onto:NeICAll-handsMeeting;
+  skos:inScheme <https://neic.no/neic-ahm2023-onto/>;
+  skos:prefLabel "NeIC All-hands Meeting 2023"@en .
+
+neic-onto:service a skos:Concept;
+  dct:source <https://doi.org/10.23673/kpyv-1k13>, <https://neic.no/services/>;
+  skos:altLabel "services"@en;
+  skos:definition """A Nordic e-Infrastructure Service is a service fulfilling the following criteria:
+1. Complies with the EOSC Rules of Participation;
+2. Can be accessed cross-border (in the Nordics at least);
+3. Service provider, e.g. National e-infrastructure, agrees to have it listed;
+4. Service delivery is either automated or could be automated."""@en;
+  skos:inScheme <https://neic.no/neic-ahm2023-onto/>;
+  skos:narrower neic-onto:DataManagementService;
+  skos:prefLabel "service"@en;
+  skos:topConceptOf <https://neic.no/neic-ahm2023-onto/> .
+
+neic-onto:DataManagementService a skos:Concept;
+  skos:altLabel "Data Management"@en;
+  skos:broader neic-onto:service;
+  skos:inScheme <https://neic.no/neic-ahm2023-onto/>;
+  skos:narrower neic-onto:NIRDeasyDMP;
+  skos:prefLabel "Data Management Service"@en .
+
+neic-onto:NIRDeasyDMP a skos:Concept;
+  dct:source <https://doi.org/10.23673/v7ep-4p77>;
+  skos:broader neic-onto:DataManagementService;
+  skos:definition "The service offers Data Storage facilities to researchers who require a platform to store, share and manage large, active scientific datasets."@en;
+  skos:inScheme <https://neic.no/neic-ahm2023-onto/>;
+  skos:prefLabel "NIRD easyDMP"@en .
+
+neic-onto:CodeRefinery a skos:Concept;
+  dct:source <https://neic.no/coderefinery/>;
+  skos:broader neic-onto:project;
+  skos:inScheme <https://neic.no/neic-ahm2023-onto/>;
+  skos:prefLabel "CodeRefinery"@en .
+
+neic-onto:HeilsaTryggvedottir a skos:Concept;
+  dct:source <https://neic.no/heilsa/>;
+  skos:altLabel "Heilsa"@en;
+  skos:broader neic-onto:project;
+  skos:inScheme <https://neic.no/neic-ahm2023-onto/>;
+  skos:prefLabel "Heilsa Tryggvedottir"@en .
+
+neic-onto:NICEST2 a skos:Concept;
+  dct:source <https://neic.no/nicest2/>;
+  skos:broader neic-onto:project;
+  skos:inScheme <https://neic.no/neic-ahm2023-onto/>;
+  skos:prefLabel "NICEST2"@en .
+
+neic-onto:NordicMicrodataDatabase a skos:Concept;
+  dct:source <https://neic.no/nordic-microdata-database/>;
+  skos:broader neic-onto:project;
+  skos:inScheme <https://neic.no/neic-ahm2023-onto/>;
+  skos:prefLabel "Nordic Microdata Database"@en .
+
+neic-onto:NordIQuEst a skos:Concept;
+  dct:source <https://neic.no/nordiquest/>;
+  skos:broader neic-onto:project;
+  skos:inScheme <https://neic.no/neic-ahm2023-onto/>;
+  skos:prefLabel "NordIQuEst"@en .
+
+neic-onto:NordicWLCGtier-1facility a skos:Concept;
+  dct:source <https://neic.no/nt1/>;
+  skos:altLabel "NT1"@en;
+  skos:broader neic-onto:operations;
+  skos:inScheme <https://neic.no/neic-ahm2023-onto/>;
+  skos:prefLabel "Nordic WLCG tier-1 facility"@en .
+
+neic-onto:Puhuri a skos:Concept;
+  dct:source <https://neic.no/puhuri/>;
+  skos:broader neic-onto:project;
+  skos:inScheme <https://neic.no/neic-ahm2023-onto/>;
+  skos:prefLabel "Puhuri"@en .
+
+neic-onto:FAIRDataForum a skos:Concept;
+  dct:source <https://neic.no/fairdataforum/>;
+  skos:broader neic-onto:NeICForum;
+  skos:definition "Nordic-Baltic FAIR Data Forum brings together researchers, data stewards, service providers, repository owners, and activity funders in one community to learn from each other, plan for training, competence-building (e.g. training events and workshops), and collaboration activities (including Nordic/EU-funded projects)"@en;
+  skos:inScheme <https://neic.no/neic-ahm2023-onto/>;
+  skos:prefLabel "FAIR Data Forum"@en .
+
+<https://neic.no/neic-ahm2023-onto#> a skos:Concept;
+  skos:inScheme <https://neic.no/neic-ahm2023-onto/>;
+  skos:topConceptOf <https://neic.no/neic-ahm2023-onto/> .
